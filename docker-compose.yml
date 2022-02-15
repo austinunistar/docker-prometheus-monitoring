@@ -12,7 +12,7 @@ networks:
 
 services:
   prometheus:
-    restart: unless-stopped
+    restart: always 
     image: prom/prometheus:v2.31.1
     container_name: prometheus
     volumes:
@@ -36,7 +36,7 @@ services:
       - back-tier
 
   node-exporter:
-    restart: unless-stopped
+    restart: always 
     container_name: node-exporter
     image: prom/node-exporter:v1.0.0
     volumes:
@@ -53,7 +53,7 @@ services:
       - back-tier
 
   alertmanager:
-    restart: unless-stopped
+    restart: always
     image: prom/alertmanager:v0.23.0
     ports:
       - 9093:9093
@@ -66,7 +66,7 @@ services:
       - '--storage.path=/alertmanager'
 
   cadvisor:
-    restart: unless-stopped
+    restart: always
     image: google/cadvisor:v0.33.0
     volumes:
       - /:/rootfs:ro
@@ -81,7 +81,7 @@ services:
       - back-tier
 
  #  process-exporter:
- #    restart: unless-stopped
+ #    restart: always
  #    image: ncabatoff/process-exporter
  #    volumes:
  #      - /proc:/host/proc
@@ -96,7 +96,7 @@ services:
  #    privileged: true
 
   grafana:
-    restart: unless-stopped
+    restart: always
     image: grafana/grafana:8.3.4
     depends_on:
       - prometheus
