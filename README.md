@@ -19,7 +19,7 @@ That's it. docker-compose builds the entire Grafa and Prometheus stack automagic
 The Grafana Dashboard is now accessible via: `http://<Host IP Address>:3000` for example http://192.168.10.1:3000
 
 username - admin
-password - foobar (Password is stored in the `config.monitoring` env file)
+password - 4rfv%TGB6yhn (Password is stored in the `config.monitoring` env file)
 
 ## Post Configuration
 Now we need to create the Prometheus Datasource in order to connect Grafana to Prometheus 
@@ -27,7 +27,7 @@ Now we need to create the Prometheus Datasource in order to connect Grafana to P
 * Click `Data Sources`
 * Click the green button `Add Data Source`.
 
-<img src="https://github.com/vegasbrianc/prometheus/blob/version-2/images/Add_Data_Source.png" width="400" heighth="400">
+<img src="https://githubxcom/vegasbrianc/prometheus/blob/version-2/images/Add_Data_Source.png" width="400" heighth="400">
 
 ## Alerting
 Alerting has been added to the stack with Slack integration. 2 Alerts have been added and are managed 
